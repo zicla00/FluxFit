@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FluxFit</title>
+    <link rel="stylesheet" type="text/css" href="trainingwoman.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="img/logo.png">
+        </a>
+    
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="training.html">Training</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    
+        <div class="right-content">
+            <a href="#" class="nav-btn">Sign In</a>
+            <a href="#" class="nav-btn">Log In</a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>
+    </header>
+
+    <section class="training-programs">
+        <div class="gender-buttons">
+            <a href="training.html" class="btn">Man</a>
+            <a href="trainingwoman.html" class="btn">Woman</a>
+        </div>
+        <div class="program-card" data-aos="flip-down" data-aos-duration="1400" data-aos-delay="400">
+            <img src="muskleswoman/abs-woman.png" alt="Program 1">
+            <h3>Program 1</h3>
+            <p>A perfect Abs for a woman</p>
+        </div>
+
+        <div class="program-card" data-aos="flip-down" data-aos-duration="1400" data-aos-delay="800">
+            <img src="muskleswoman/legs-woman.png" alt="Program 2">
+            <h3>Program 2</h3>
+            <p>Legs made of iron</p>
+        </div>
+
+        <div class="program-card" data-aos="flip-down" data-aos-duration="1400" data-aos-delay="1200">
+            <img src="muskleswoman/biceps-woman.png" alt="Program 3">
+            <h3>Program 3</h3>
+            <p>Strong arms</p>
+        </div>
+
+        <div class="program-card" data-aos="flip-down" data-aos-duration="1400" data-aos-delay="1600">
+            <img src="muskleswoman/back-woman.png" alt="Program 4">
+            <h3>Program 4</h3>
+            <p>Devil's back</p>
+        </div>
+        
+       
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        AOS.init();
+
+        function showPages(gender) {
+            var programCards = document.querySelectorAll('.program-card');
+
+            programCards.forEach(function(card) {
+                var imgSrc = card.querySelector('img').getAttribute('src');
+                var isMan = imgSrc.includes('man');
+                var isWoman = imgSrc.includes('woman');
+
+                if (gender === 'man' && isMan) {
+                    card.style.display = 'block';
+                } else if (gender === 'woman' && isWoman) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
